@@ -1,14 +1,29 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
+	<meta charset "UTF-8">
   <title><%= full_title(yield(:page_title)) %></title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
+	<%= render 'layouts/shim' %>
 </head>
+
 <body>
-
-<%= yield %>
-
+	<header>
+		<%= render 'layouts/navigation' %>
+	</header>
+		
+	<main role="main">
+		<div class="jumbotron">
+			<div class="container">
+				<%= yield %>
+			</div>
+		</div>
+	</main>
+	
+	<%= render 'layouts/footer' %>
 </body>
+
 </html>

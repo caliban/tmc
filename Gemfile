@@ -3,7 +3,7 @@ ruby '2.0.0'
 #ruby-gemset=ruby2.0.0rails4.0.2
 
 gem 'rails', '4.0.2'
-gem 'bootstrap-sass', '2.3.2.0'
+gem 'bootstrap-sass', '3.1'
 gem 'bcrypt-ruby', '3.1.2'        # Use ActiveModel has_secure_password
 gem 'faker', '1.1.2'
 gem 'will_paginate', '3.0.4'
