@@ -1,3 +1,33 @@
 <% provide(:page_title, 'Sign up') %>
 <h1>Sign up</h1>
-<p>Find me in app/views/users/new.html.erb</p>
+
+<div class="row">
+  <div class="span6 offset3" role="form">
+    <%= form_for(@user) do |f| %>
+			<%= render 'shared/error_messages' %>
+
+      <%= f.label :first_name, "First Name" %>
+      <%= f.text_field :first_name %>
+			
+      <%= f.label :last_name, "Last Name" %>
+      <%= f.text_field :last_name %>
+
+      <%= f.label :email %>
+      <%= f.email_field :email %>
+			
+      <%= f.label :gender %>
+      <%= f.text_field :gender %>
+			
+      <%= f.label :date_of_birth, "Date of Birth" %>
+      <%= f.date_field :date_of_birth %>
+
+      <%= f.label :password %>
+      <%= f.password_field :password %>
+
+      <%= f.label :password_confirmation, "Password Confirmation" %>
+      <%= f.password_field :password_confirmation %>
+
+      <%= f.submit "Create account", class: "btn btn-large btn-primary" %>
+    <% end %>
+  </div>
+</div>

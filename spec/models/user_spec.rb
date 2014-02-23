@@ -36,6 +36,16 @@ describe User do
     before { @user.gender = "" }
     it { should_not be_valid }
   end
+  
+  describe "when gender type is invalid" do
+    it "should be invalid" do
+      gender_type = %w[Male 0 none]
+      gender_type.each do |invalid_gender_type|
+        @user.gender = invalid_gender_type
+        expect(@user).not_to be_valid
+      end
+    end
+  end
 
   describe "when date of birth is not present" do
     before { @user.date_of_birth = "" }
@@ -45,6 +55,16 @@ describe User do
   describe "when first_name is too long" do
     before { @user.first_name = "a" * 26 }
     it { should_not be_valid }
+  end
+  
+  describe "when first_name format is invalid" do
+    it "should be invalid" do
+      first_names = %w[mike F MIchA -Dan Fred2]
+      first_names.each do |invalid_first_name|
+        @user.first_name = invalid_first_name
+        expect(@user).not_to be_valid
+      end
+    end
   end
 
   describe "when last_name is too long" do
@@ -80,6 +100,16 @@ describe User do
     end
 
     it { should_not be_valid }
+  end
+  
+  describe "email address with mixed case" do
+    let(:mixed_case_email) { "Foo@ExAMPle.CoM" }
+
+    it "should be saved as all lower-case" do
+      @user.email = mixed_case_email
+      @user.save
+      expect(@user.reload.email).to eq mixed_case_email.downcase
+    end
   end
   
   describe "when password is not present" do
