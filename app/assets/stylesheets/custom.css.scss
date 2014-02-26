@@ -1,116 +1,116 @@
 @import "bootstrap";
 
-$purple: #6A0AAB;
-
-// make all images responsive by default
-img {
-	@extend .img-responsive;
-	margin: 0 auto;
-}
-
-// override for the 'Home' navigation link
-.navbar-brand {
-	font-size: inherit;
-}
-
-body {
-	background-color: #ffffff;
-}
-
-.navbar{
-	background-color: #ffffff;
-}
-
-/*.center{
-	text-align: center;
-}*/
-
-/*.navbar-center{
-	text-align: center;
-}*/
-
+//$purple: #6A0AAB;
+//
+//// make all images responsive by default
+//img {
+//	@extend .img-responsive;
+//	margin: 0 auto;
+//}
+//
+//// override for the 'Home' navigation link
+//.navbar-brand {
+//	font-size: inherit;
+//}
+//
+//body {
+//	background-color: #ffffff;
+//}
+//
+//.navbar{
+//	background-color: #ffffff;
+//}
+//
+///*.center{
+//	text-align: center;
+//}*/
+//
+///*.navbar-center{
+//	text-align: center;
+//}*/
+//
+////.navbar-default .navbar-nav > li > a {
+////  color: $purple;
+////}
+//
 //.navbar-default .navbar-nav > li > a {
-//  color: $purple;
-//}
-
-.navbar-default .navbar-nav > li > a {
-	color: $purple;
-  padding: 8px 8px 8px 8px;
-  margin: 6px 6px 6px 6px;
-  border: 1px solid transparent;
-  border-radius: 6px;
-}
-.navbar-default .navbar-nav > li > a:hover {
-	color: $purple;
-  border: 1px solid $purple;
-}
-.navbar-nav > .active > a,
-.navbar-nav > .active > a:hover {
-  border: 1px solid $purple;
-}
-.navbar-default .navbar-nav > .active > a:hover {
-  color: #4582ec;
-}
-
-//.navbar-default > .active > a,
-//.navbar-default > .active > a:hover,
-//.navbar-default > .active > a:focus {
-//  font-color: #1729B0;
-//  background-color: transparent;
-//}
-
-//.navbar-toggle {
-//  position: relative;
-//  float: right;
-//  margin-right: 15px;
-//  padding: 9px 10px;
-//  margin-top: 8px;
-//  margin-bottom: 8px;
-//  background-color: transparent;
-//  background-image: none;
+//	color: $purple;
+//  padding: 8px 8px 8px 8px;
+//  margin: 6px 6px 6px 6px;
 //  border: 1px solid transparent;
-//  border-radius: 4px;
+//  border-radius: 6px;
 //}
-
-
-/* miscellaneous */
-
-@mixin box_sizing {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-.debug_dump {
-  clear: both;
-  float: left;
-  width: 100%;
-  margin-top: 45px;
-  @include box_sizing;
-}
-
-/* forms */
-
-input, textarea, select, .uneditable-input {
-  border: 1px solid #bbb;
-  width: 100%;
-  margin-bottom: 15px;
-  @include box_sizing;
-}
-
-input {
-  height: auto !important;
-}
-
-#error_explanation {
-  color: #f00;
-  ul {
-    list-style: none;
-    margin: 0 0 18px 0;
-  }
-}
-
-.field_with_errors {
-  @extend .control-group;
-  @extend .error;
-}
+//.navbar-default .navbar-nav > li > a:hover {
+//	color: $purple;
+//  border: 1px solid $purple;
+//}
+//.navbar-nav > .active > a,
+//.navbar-nav > .active > a:hover {
+//  border: 1px solid $purple;
+//}
+//.navbar-default .navbar-nav > .active > a:hover {
+//  color: #4582ec;
+//}
+//
+////.navbar-default > .active > a,
+////.navbar-default > .active > a:hover,
+////.navbar-default > .active > a:focus {
+////  font-color: #1729B0;
+////  background-color: transparent;
+////}
+//
+////.navbar-toggle {
+////  position: relative;
+////  float: right;
+////  margin-right: 15px;
+////  padding: 9px 10px;
+////  margin-top: 8px;
+////  margin-bottom: 8px;
+////  background-color: transparent;
+////  background-image: none;
+////  border: 1px solid transparent;
+////  border-radius: 4px;
+////}
+//
+//
+///* miscellaneous */
+//
+//@mixin box_sizing {
+//  -moz-box-sizing: border-box;
+//  -webkit-box-sizing: border-box;
+//  box-sizing: border-box;
+//}
+//
+//.debug_dump {
+//  clear: both;
+//  float: left;
+//  width: 100%;
+//  margin-top: 45px;
+//  @include box_sizing;
+//}
+//
+///* forms */
+//
+//input, textarea, select, .uneditable-input {
+//  border: 1px solid #bbb;
+//  width: 100%;
+//  margin-bottom: 15px;
+//  @include box_sizing;
+//}
+//
+//input {
+//  height: auto !important;
+//}
+//
+//#error_explanation {
+//  color: #f00;
+//  ul {
+//    list-style: none;
+//    margin: 0 0 18px 0;
+//  }
+//}
+//
+//.field_with_errors {
+//  @extend .control-group;
+//  @extend .error;
+//}

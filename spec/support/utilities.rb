@@ -9,10 +9,27 @@ include ApplicationHelper
 #   end
 # end
 
+
+# added as solution for excercise
+# http://ruby.railstutorial.org/chapters/sign-in-sign-out#sec-sign_in_out_exercises
 def valid_login(user)
-  fill_in "Email",    with: user.email.upcase
-  fill_in "Password", with: user.password
+  fill_in "Email",      with: user.email.upcase
+  fill_in "Password",   with: user.password
   click_button "Log in"
+end
+
+def login(user, options={})
+  if options[:no_capybara]
+    # Sign in when not using Capybara.
+    remember_token = User.new_remember_token
+    cookies[:remember_token] = remember_token
+    user.update_attribute(:remember_token, User.encrypt(remember_token))
+  else
+    visit login_path   # already there when method called?
+    fill_in "Email",      with: user.email.upcase
+    fill_in "Password",   with: user.password
+    click_button "Log in"
+  end
 end
 
 def valid_signup
