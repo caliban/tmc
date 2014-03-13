@@ -1,4 +1,7 @@
 class User < ActiveRecord::Base
+  has_many :ascents, dependent: :destroy
+  has_many :climbs, through: :ascents
+  
   before_save { email.downcase! }
   before_create :create_remember_token
   

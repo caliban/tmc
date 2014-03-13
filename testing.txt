@@ -1,1 +1,7 @@
 first_name:string last_name:string email:string gender:string date_of_birth:date
+
+rails g model Climb name:string grade:string rating:float
+
+rails g model Ascent user_id:integer climb_id:integer
+
+rails g migration AddDateToAscents date:date

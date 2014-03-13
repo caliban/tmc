@@ -4,3 +4,12 @@
 	<%= "#{@user.first_name} #{@user.last_name}" %>
 </h1>
 <%= @user.first_name %>, <%= @user.last_name %>, <%= @user.email %>
+
+<div>
+	<% if @user.ascents.any? %>
+		<h3>Ascents (<%= @user.ascents.count %>)</h3>
+		<ol class="ascents">
+			<%= render @ascents %>
+		</ol>
+	<%end%>
+</div>

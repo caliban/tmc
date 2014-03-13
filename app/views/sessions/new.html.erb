@@ -1,22 +1,24 @@
 <% provide(:page_title, "Log in") %>
-<h1>Log in</h1>
 
-<div class="container">
-  <div class="form-login" role"form">
-    <%= form_tag sessions_path do %>
+<div class="row">
+	<div class="col-sm-offset-2">
+	  <div class="form-group form-login" role="form">
+			<h2>Log in</h2>
+	    <%= form_tag sessions_path do %>
 
-      <%= label_tag :email %>
-      <%= email_field_tag :email, params[:email] %>
+	      <%= label_tag :email %>
+	      <%= email_field_tag :email, params[:email] %>
 
-      <%= label_tag :password %>
-      <%= password_field_tag :password %>
+	      <%= label_tag :password %>
+	      <%= password_field_tag :password %>
 			
-			<%= label_tag :remember_me %>
-			<%= check_box_tag :remember_me, params[:remember_me] %>
+				<%= label_tag :remember_me %>
+				<%= check_box_tag :remember_me, params[:remember_me] %>
 
-      <%= submit_tag "Log in", class: "btn btn-large btn-primary" %>
-    <% end %>
+	      <%= submit_tag "Log in", class: "btn btn-large btn-primary" %>
+	    <% end %>
 
-    <p>New to tmc? <%= link_to "Sign up now!", signup_path %></p>
-  </div>
+	    <p>New to tmc? <%= link_to "Sign up now!", signup_path %></p>
+	  </div>
+	</div>
 </div>

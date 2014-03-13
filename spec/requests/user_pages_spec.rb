@@ -23,11 +23,22 @@ describe "UserPages" do
   end
   
   describe "profile page" do
-    let(:user) { FactoryGirl.create(:user) }
+    let!(:user) { FactoryGirl.create(:user) }
+    let!(:climb) { FactoryGirl.create(:climb) }
+    let!(:ascent1) { FactoryGirl.create(:ascent, user: user, climb: climb, date: 1.month.ago) }
+    let!(:ascent2) { FactoryGirl.create(:ascent, user: user, climb: climb, date: 1.day.ago) }
+    
     before { visit user_path(user) }
     
     it { should have_title(user.first_name) }
     it { should have_content(user.first_name) }
+    
+    describe "ascents" do
+      it { should have_content(user.ascents.count) }
+      # expect {user.ascents.count}.to eq "2"
+      it { should have_content(ascent1.climb.name) }
+      it { should have_content(ascent2.climb.name) }
+    end
   end
   
   describe "signup page" do

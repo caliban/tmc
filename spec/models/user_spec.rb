@@ -2,6 +2,7 @@ require 'spec_helper'
 
 describe User do
   before { @user = User.new(first_name: "Example", last_name: "User", email: "user@example.com", gender: "male", date_of_birth: "20/12/1991", password: "foobarfoobar", password_confirmation: "foobarfoobar") }
+  # before { @user = FactoryGirl.create(:user) }
   
   subject { @user }
   
@@ -16,6 +17,8 @@ describe User do
   it { should respond_to(:authenticate) }
   it { should respond_to(:remember_token) }
   it { should respond_to(:admin) }
+  it { should respond_to(:ascents) }
+  it { should respond_to(:climbs) }
   
   it { should be_valid }
   it { should_not be_admin }
@@ -161,5 +164,31 @@ describe User do
   describe "remember token" do
     before { @user.save }
     its(:remember_token) { should_not be_blank }
+  end
+  
+  describe "climb association" do
+    
+    before { @user.save }
+    let!(:climb) { FactoryGirl.create(:climb) }
+    let!(:old_ascent) do
+      FactoryGirl.create(:ascent, user: @user, climb: climb, created_at: 1.day.ago)
+    end
+    
+    let!(:new_ascent) do
+      FactoryGirl.create(:ascent, user: @user, climb: climb, created_at: 1.hour.ago)
+    end
+    
+    it "should list ascents in correct order" do
+      expect(@user.ascents.to_a).to eq [new_ascent, old_ascent]
+    end
+    
+    it "should destroy associated ascents" do
+      ascents = @user.ascents.to_a
+      @user.destroy
+      expect(ascents).not_to be_empty
+      ascents.each do |ascent|
+        expect(Ascent.where(id: ascent.id)).to be_empty
+      end
+    end
   end
 end

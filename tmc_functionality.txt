@@ -1,1 +1,3 @@
 Users are rated with their own grades
+
+Allow for comments (on routes, public) and notes (on ascents, private)

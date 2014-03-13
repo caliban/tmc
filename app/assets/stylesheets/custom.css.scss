@@ -114,3 +114,20 @@
 //  @extend .control-group;
 //  @extend .error;
 //}
+
+
+/* Georgs edits*/
+//@mixin box_sizing {
+//  -moz-box-sizing: border-box;
+//  -webkit-box-sizing: border-box;
+//  box-sizing: border-box;
+//}
+
+body {
+	padding-top: 70px;
+}
+
+.jumbotron {
+	text-align: center;
+//	background-color: transparent;
+}

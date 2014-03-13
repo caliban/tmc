@@ -11,7 +11,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140226172044) do
+ActiveRecord::Schema.define(version: 20140305113821) do
+
+  create_table "ascents", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "climb_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.date     "date"
+  end
+
+  add_index "ascents", ["date"], name: "index_ascents_on_date"
+
+  create_table "climbs", force: true do |t|
+    t.string   "name"
+    t.string   "grade"
+    t.float    "rating"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "first_name"

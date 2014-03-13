@@ -8,4 +8,17 @@ FactoryGirl.define do
     password      "foobarfoobar"
     password_confirmation "foobarfoobar"
   end
+  
+  factory :climb do
+    name    "Dreamcatcher"
+    grade   "35"
+    rating  "5"
+    # ascent
+  end
+  
+  factory :ascent do
+    # user_id   "1"
+    # climb_id  "1"
+    # date      "1/1/2001"
+  end
 end
