@@ -1,5 +1,6 @@
 TmcApp::Application.routes.draw do
   resources :users
+  resources :climbs
   resources :sessions, only: [:new, :create, :destroy]
   
   root  'static_pages#home'

@@ -17,8 +17,8 @@ FactoryGirl.define do
   end
   
   factory :ascent do
-    # user_id   "1"
-    # climb_id  "1"
-    # date      "1/1/2001"
+    user_id   "1"
+    climb_id  "1"
+    date      "1/1/2001"
   end
 end

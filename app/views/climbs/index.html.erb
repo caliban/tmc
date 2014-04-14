@@ -1,0 +1,11 @@
+<% provide(:page_title, 'All climbs') %>
+<h1>All climbs</h1>
+<p>Find me in app/views/climbs/index.html.erb</p>
+
+<%= will_paginate %>
+
+<ul class="climbs">
+	<%= render @climbs %>
+</ul>
+
+<%= will_paginate %>
